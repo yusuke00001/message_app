@@ -226,7 +226,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  
+
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
@@ -243,6 +243,11 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.scope = "openid"
   # --- user config ---
   config.user_config do |user|
+    user.username_attribute_names = [:email]
+    user.password_attribute_name = :password
+    user.crypted_password_attribute_name = :crypted_password
+    user.encryption_algorithm = :bcrypt
+    user.salt_attribute_name = nil
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

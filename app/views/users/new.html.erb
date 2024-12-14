@@ -1,22 +1,28 @@
-<h1>ユーザー登録フォーム</h1>
-<%= form_with model:@user do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<br>
+<br>
+<div class="card mx-auto" style="max-width: 500px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+  <h4 class="mb-0">ユーザー登録</h4>
+  <div class="card-body">
+    <%= form_with(model:@user, class: "needs-validation") do |form| %>
+      <div class="mb-3">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :email, class: "form-label" %>
+        <%= form.text_field :email, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label" %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password_confirmation, class: "form-label" %>
+        <%= form.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit "登録" %>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-  <div>
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
+</div>

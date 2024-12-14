@@ -41,7 +41,6 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.text "crypted_password"
     t.integer "created_at"
     t.integer "updated_at"
-    t.integer "salt"
   end
 
   add_foreign_key "messages", "groups", name: "messages_group_id"

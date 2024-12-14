@@ -1,0 +1,16 @@
+<div class="container text-center">
+<h1>ユーザー一覧</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+       <tr>
+          <th> name </th>
+          <th> email </th>
+       </tr>
+     </thead>
+     <% @users.each do |user| %>
+       <tr>
+         <td><%= user.name %></td>
+         <td><%= user.email %></td>
+       </tr>
+<% end %>
