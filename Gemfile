@@ -65,8 +65,6 @@ group :test do
 end
 
 gem 'sorcery'
-gem 'bootstrap', '~> 5.3'
-gem 'sassc-rails'
 gem 'pry-byebug'
 gem 'pry'
 gem 'bcrypt', '~> 3.1.7'
