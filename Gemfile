@@ -63,3 +63,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'sorcery'
+gem 'pry-byebug'
+gem 'pry'
+gem 'bcrypt', '~> 3.1.7'

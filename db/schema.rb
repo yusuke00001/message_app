@@ -14,8 +14,6 @@ ActiveRecord::Schema[8.0].define(version: 0) do
   create_table "groups", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
-    t.integer "user_group_id"
-    t.index ["user_group_id"], name: "groups_user_group_id_idx"
   end
 
   create_table "messages", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -40,17 +38,13 @@ ActiveRecord::Schema[8.0].define(version: 0) do
   create_table "users", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "name"
     t.text "email"
-    t.text "encrypted_password"
+    t.text "crypted_password"
     t.integer "created_at"
     t.integer "updated_at"
-    t.integer "user_group_id"
-    t.index ["user_group_id"], name: "users_user_group_id_idx"
   end
 
-  add_foreign_key "groups", "user_groups", name: "groups_user_group_id"
   add_foreign_key "messages", "groups", name: "messages_group_id"
   add_foreign_key "messages", "users", name: "messages_user_id"
   add_foreign_key "user_groups", "groups", name: "user_groups_group_id"
   add_foreign_key "user_groups", "users", name: "user_groups_user_id"
-  add_foreign_key "users", "user_groups", name: "users_user_group_id"
 end
